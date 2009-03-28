@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AMQConnectionWizardAuthenticationPageClass</class>
+ <widget class="QWidget" name="AMQConnectionWizardAuthenticationPageClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>205</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AMQConnectionWizardAuthenticationPage</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Authentication Type:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="authenticationType">
+     <item>
+      <property name="text">
+       <string>Anonymous</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Simple Authentication</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>User Name:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="user">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Password:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="password">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="storePassword">
+     <property name="text">
+      <string>Save password.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>82</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>authenticationType</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>AMQConnectionWizardAuthenticationPageClass</receiver>
+   <slot>changedAuthenticationType(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>user</sender>
+   <signal>editTextChanged(QString)</signal>
+   <receiver>AMQConnectionWizardAuthenticationPageClass</receiver>
+   <slot>changedUser(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>275</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>user</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>AMQConnectionWizardAuthenticationPageClass</receiver>
+   <slot>changedUser(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>293</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>password</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>AMQConnectionWizardAuthenticationPageClass</receiver>
+   <slot>changedPassword(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>313</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>storePassword</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>password</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>storePassword</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>password</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>212</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>changedAuthenticationType(int)</slot>
+  <slot>changedUser(QString)</slot>
+  <slot>changedPassword(QString)</slot>
+ </slots>
+</ui>
